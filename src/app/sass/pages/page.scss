@@ -1,0 +1,51 @@
+.ahorro-ds {
+  &_1 {
+    color: #5C5D5E;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  &_2 {
+    color: $ambienteColor;
+    font-size: 25px;
+    border-bottom: 1px solid $text-color;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+  &_3 {
+    color: $text-color;
+    font-weight: 300;
+  }
+  &_b {
+    color: $ambienteColor;
+    font-size: 35px;
+  }
+}
+.key-icon {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 0 5px #000;
+  img {
+    width: 40px;
+  }
+}
+.tool-icon {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  border-radius: 50%;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

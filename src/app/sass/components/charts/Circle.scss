@@ -1,0 +1,60 @@
+.chart-progress {
+  &-triangle {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    border: 1rem solid transparent;
+    border-bottom: 12px solid $yellow;
+    margin-top:  -10px;
+  }
+}
+#chart-1, #chart-2, #chart-3 {
+  .label {
+    font-size: 20px;
+    color: $primary-color;
+  }
+}
+#chart-1, #chart-2, #chart-3, #chart-4, #chart-5, #chart-7 {
+  padding-top: 55%;
+  width: 55%;
+}
+#chart-2 {
+  .label {
+    color: #04A3D0;
+  }
+}
+#chart-5, #chart-7 {
+  margin-bottom: 30px;
+  .label {
+    font-size: 18px;
+    &-y-bottom {
+
+    }
+  }
+}
+#chart-11 {
+  width: 55%;
+  padding-top: 55%;
+  .label-y-center {
+    font-size: 25px;
+    color: $primary-color;
+  }
+  .label-y-border {
+    font-size: 20px;
+    color: $primary-color;
+  }
+}
+@media screen and (max-width: 1100px) {
+  #chart-1, #chart-2, #chart-3, #chart-4, #chart-5, #chart-7 {
+    padding-top: 100%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 868px) {
+  #chart-5, #chart-7 {
+    padding-top: 55%;
+    width: 55%;
+  }
+}

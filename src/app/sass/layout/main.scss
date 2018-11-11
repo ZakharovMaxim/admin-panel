@@ -1,0 +1,26 @@
+main {
+  padding-left: 64px;
+}
+main.dashboard {
+  background: url('../assets/img/bg.png') no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    content: '';
+    background: linear-gradient(0deg, rgba(0,103,114, .52), #014342);
+  }
+}
+.content {
+  margin: 0 auto;
+  max-width: 1100px;
+  z-index: 1;
+  width: 100%;
+}

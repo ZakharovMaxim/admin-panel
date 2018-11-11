@@ -1,0 +1,170 @@
+@import 'Circle';
+@import 'label';
+@import 'Bars';
+@import 'Linear';
+@import 'Area';
+.chart {
+  svg {
+    .axis {
+      line, path {
+        stroke: #000;
+      }
+      text {
+        fill: #000;
+      }
+    }
+  }
+}
+.chart-dark {
+  color: #000;
+}
+.chart.chart-range {
+  width: 95%;
+  padding-top: 20%;
+  position: relative;
+}
+.chart {
+  width: 100%;
+  align-self:center;
+  position: relative;
+  padding-top: 100%;
+  .chart-type {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    circle, ellipse {
+      transform-origin: center;
+    }
+  }
+}
+
+.chart-range {
+  position: relative;
+  width: 98%;
+  margin: 0 auto;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid $ambienteColor;
+    display: block;
+    background: transparent;
+    content: '';
+    //cursor: all-scroll;
+  }
+  .left, .right {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    height: 100%;
+    background: rgba(0,103, 114, .42);
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: $ambienteColor;
+    }
+    .handler {
+      position: absolute;
+      user-select: none;
+      -moz-user-select: none;
+      top: 0;
+      background: #B6B9BC;
+      color: $white;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 8px;
+      width: 4px;
+      &:after {
+        width: 14px;
+        height: 23px;
+        font-family: icons;
+        border-radius: 5px;
+        text-align: center;
+        justify-content: center;
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        background: $ambienteColor;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+  }
+  .controlls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .left {
+    left: 0;
+    &:before {
+      right: 100%;
+    }
+    .handler {
+      right: 0;
+      cursor: e-resize;
+      &:after {
+        content: '\64';
+      }
+    }
+  }
+  .right {
+    right: 0;
+    &:before {
+      left: 100%;
+    }
+    .handler {
+      left: 0;
+      font-size: 12px;
+      cursor: e-resize;
+      &:after {
+        content: '\6a';
+      }
+    }
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 125.66;
+  }
+}
+@keyframes spin {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 125.66;
+  }
+}
+@-moz-keyframes spin {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 125.66;
+  }
+}

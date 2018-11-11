@@ -1,0 +1,16 @@
+.plantacion {
+  .d-flex.align-items-center{
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-wrap:wrap;
+    justify-content: center;
+  }
+  &__icon {
+    width: 6rem;
+    margin-right: 5px;
+  }
+  &__text {
+    font-size: 5.8rem;
+    color: $primary-color;
+  }
+}

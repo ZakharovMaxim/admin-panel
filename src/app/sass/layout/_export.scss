@@ -1,0 +1,12 @@
+@import 'main';
+@import 'nav';
+@import 'dashboard-header';
+@import 'page-header';
+@import 'map-header';
+@import 'table';
+@import 'map';
+@import 'mobileNav';
+.main-row {
+    position: relative;
+    max-width: 100%;
+}

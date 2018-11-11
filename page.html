@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="dist/style.css">
+  <link rel="stylesheet" href="public/vendor/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="/css/easy-autocomplete.min.css">
+  <link rel="stylesheet" href="/css/jquery-ui.min.css"> -->
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app" class="container-fluid collapsed-menu">
+    <div class="popup">
+      <div class="popup__content">
+        <form action="#" method="POST" id="startPresentacion">
+          <div class="title-configurar">
+            <span>Configurar presentacion</span>
+            <span class="icon-close"></span>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-5">
+              <div class="title-form">
+                <span>Pantallas a desplegar</span>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" id="ch_generacion" name="generation">
+                <div class="checkbox"></div>
+                <label for="ch_generacion">Generacion</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" id="ch_ahorro" name="ahorro">
+                <div class="checkbox"></div>
+                <label for="ch_ahorro">Ahorro</label>
+              </div>
+              <div class="form-group">
+                <input type="checkbox" id="ch_ambiente" name="ambiente">
+                <div class="checkbox"></div>
+                <label for="ch_ambiente">Ambiente</label>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="title-form">
+                <span>Tiempo de transition</span>
+              </div>
+              <div class="form-group">
+                <input type="number" id="form_seconds" name="delay" value="5">
+                <label for="form_seconds">segundos</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <input type="submit" value="Iniciar">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="d-flex h-100 align-items-stretch" style="overflow:hidden">
+      <nav class="col">
+        <div class="toggle-menu">
+          <span class="icon-arrow-left"></span>
+        </div>
+        <div class="nav-content">
+          <div class="title-menu">
+            <span>MONITOREO TOTAL</span>
+          </div>
+          <ul class="main-nav">
+            <li>
+              <a href="index.html">Dashboard</a>
+            </li>
+            <li>
+              <a href="map.html">Mapa</a>
+            </li>
+          </ul>
+          <div class="title-menu">
+            <span>POR SISTEMA</span>
+          </div>
+          <div class="search">
+            <div class="search__content">
+              <input type="text" placeholder="Buscar sistema…">
+            </div>
+          </div>
+          <div class="title-borderless">Recientes…</div>
+          <ul class="recientes-nav">
+            <li>
+              <a href="page.html" class="active">Corporativo Bimbo</a>
+            </li>
+            <li>
+              <a href="page.html">Apizaco</a>
+            </li>
+            <li>
+              <a href="page.html">CEDIS Querétaro</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main class="col">
+        <div class="page-header">
+          <div class="content">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-auto d-flex align-items-center">
+                <div class="back" onclick="window.history.back()">
+                  <span class="icon-arrow-left"></span>
+                </div>
+                <div class="analytics">
+                  <img src="public/images/icons/analytics.png" alt="">
+                </div>
+                <div class="title-header">
+                  <span>Corporativo Santa Fe</span>
+                </div>
+              </div>
+              <div class="col-auto d-flex align-items-center">
+                <div>
+                  <div class="btn presentacion"></div>
+                </div>
+                <div class="gear">
+                  <a href="#">
+                    <span class="icon-gear"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="title-status">
+                <span>Estatus del sistema</span>
+              </div>
+              <ul>
+                <li>Encendido</li>
+                <li>Conectado a internet</li>
+              </ul>
+            </div>
+            <div class="row justify-content-between align-items-end">
+              <div class="col-auto">
+                <div class="logo-light">
+                  <img src="public/images/Bimbo_logo_light.png" alt="">
+                </div>
+                <div class="title-status">
+                  <span>Valor total de la energía generada:</span>
+                </div>
+                <div class="header-total">
+                  <span>$12.3 millones</span>
+                </div>
+              </div>
+              <div class="col-auto header-statistic">
+                <div class="title-status">
+                  <span>Potencia instalada:</span>
+                </div>
+                <div class="stat">100.10 kWp</div>
+                <div class="title-status">
+                  <span>Puesta en marcha:</span>
+                </div>
+                <div class="stat">21-12-2017</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-wrapper d-flex justify-content-center flex-column tab-dark content">
+          <div class="tab-header">
+            <ul>
+              <li>
+                <a href="#generation">Generación</a>
+              </li>
+              <li>
+                <a href="#ahorro">Ahorro</a>
+              </li>
+              <li>
+                <a href="#ambiente">Ambiente</a>
+              </li>
+            </ul>
+          </div>
+          <div class="tabs">
+            <div id="generation" class="tab">
+              <div class="row align-items-stretch">
+                <div class="col-md-6 col-12 generation_block1">
+                  <div class="chart-slider">
+                    <div class="chart-slider__header">
+                      <span class="icon-arrow-left chart-slider__prev"></span>
+                      <span class="chart-slider__title">Energía</span>
+                      <span class="icon-arrow-right chart-slider__next"></span>
+                    </div>
+                    <div class="chart-slider__content">
+                      <div class="chart-slider__slide active">
+                        <div class="title">Energía</div>
+                        <!-- data-datasource-url-month="/json/generation_energia/yyyy/mm.json" -->
+                        <!-- data-datasource-url="/json/generation_energia.json" -->
+                        <div class="chart chart-dark" data-datasource-url="/json/datepicker/energia" data-height="0.5" id="chart-9">
+                          <div class="chart-type chart-bar-complex" data-color2="#00C3C1" data-show-y-axis="true" data-color1="#00FBD0" data-label="kWh"
+                            data-suffix="kWh" data-prefix="" data-value-suffix="kWh" data-value-prefix="">
+                          </div>
+                          
+                          
+                        </div>
+                        <div class="labels">
+                          <div class="chart-label-primary">
+                            <span>Energía generada</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="chart-slider__slide">
+                        <div class="title">Potencia</div>
+                        <!--  -->
+                        <div class="chart chart-dark" data-height="0.5" data-datasource-url="/json/datepicker/area/area" id="chart-10">
+                          <div class="chart-type chart-area" data-color1="#00FBD0" data-color2="#00C3C1" data-label="kW" data-suffix="" data-prefix=""
+                            data-value-suffix="" data-value-prefix="">
+                          </div>
+                          <!-- <div class="chart-date-control">
+                            <ul>
+                              <li data-period="week">7 dias</li>
+                              <li data-period="month" class="active">Mes</li>
+                            </ul>
+                          </div>
+                          <div class="chart-label-secondary">
+                            <span>Valor económico generado</span>
+                          </div> -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-12 generation_block2">
+                  <div class="chart-slider">
+                    <div class="chart-slider__header">
+                      <span class="icon-arrow-left chart-slider__prev"></span>
+                      <span class="chart-slider__title">Meta de generación</span>
+                      <span class="icon-arrow-right chart-slider__next"></span>
+                    </div>
+                    <div class="chart-slider__content">
+                      <div class="chart-slider__slide">
+                        <div class="title">Meta de generación</div>
+                        <!--  data-datasource-url="/json/generation_meta.json"  -->
+                        <div class="chart chart-dark" id="chart-11" data-percent='85' data-value="85" data-total="100" data-range-min="80" data-range-max="90">
+                          <div class="chart-type chart-progress-part">
+
+                          </div>
+                          <!-- <div class="chart-label-square-yellow">
+                            <span>Rango de generacion esperada al dia</span>
+                          </div> -->
+                        </div>
+                      </div>
+                      <div class="chart-slider__slide">
+                        <div class="title">Rendimiento</div>
+                        <!-- data-datasource-url="/json/generation_rendimiento.json" -->
+                        <div class="chart chart-dark" data-height="0.5" id="chart-12" data-datasource-url="/json/datepicker/linear/linear" data-datasource-url-month="/json/generation_rendimiento-m.json">
+                          <div class="chart-type chart-linear" data-color1="#00FACF" data-color2="#00FACF" data-label="kWh/kWp" data-suffix="" data-prefix=""
+                            data-value-suffix="suf" data-value-prefix="pref">
+                          </div>
+                        </div>
+                        <div class="labels">
+                          <div class="chart-label-primary-long">
+                            <span>Rendimiento del sistema</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="ahorro" class="tab">
+              <div class="row justify-content-between">
+                <div class="col-md-3 ahorro-ds">
+                  <div class="ahorro-ds_1">Valor unitario de la energía generada por este sistema:</div>
+                  <div class="ahorro-ds_2">
+                    <span class="ahorro-ds_b">$3.54</span>
+                    <span>/ kWh</span>
+                    <img src="public/images/icons/pen.png" alt="">
+                  </div>
+                  <div class="ahorro-ds_3">
+                    Enlight estima este valor con base en los datos de los recibos de luz de este sistema. Puedes editarlo para que refleje el
+                    valor real que represente a tu empresa.
+                  </div>
+                  <div class="ahorro-ds_1">
+                    Valor total generado desde que se encendió:
+                  </div>
+                  <div>
+                    <span class="ahorro-ds_b">$3.54</span>
+                  </div>
+                </div>
+                <div class="col-md-8 ahhoro_block2">
+                  <!-- data-datasource-url="/json/ahorro_bar.json" -->
+                  <div class="chart chart-dark" id="chart-13" data-height="0.5" data-datasource-url="/json/datepicker/barComplex/bar" data-datasource-url-month="/json/ahorro_bar-m.json">
+                    <div class="chart-type chart-bar-complex" data-color1="#13334D" data-color2="#04A3D0" data-label="$" data-show-y-axis="true"
+                      data-suffix="" data-prefix="$" data-value-suffix="" data-value-prefix="$">
+
+
+                    </div>
+                    <!-- <div class="chart-date-control">
+                      <ul>
+                        <li data-period="month">Mes</li>
+                        <li data-period="year" class="active">Ano</li>
+                        <li data-period="full">Personalizado</li>
+                      </ul>
+                    </div>
+                    <div class="chart-label-secondary">
+                      <span>Valor económico generado</span>
+                    </div> -->
+                    <!-- <div class="chart-control-time">
+                        <div class="controls">
+                          <div class="left">
+                            <div class="handler" draggable="false">
+                            </div>
+                          </div>
+                          <div class="right">
+                            <div class="handler" draggable="false">
+                            </div>
+                          </div>
+                        </div>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="ambiente" class="tab">
+              <div class="row page">
+                <div class="col-7 ambiente_block1">
+                  <div class="title-ambienteTab">
+                    Equivalentes en beneficio:
+                  </div>
+                  <div class="block-1 row">
+                    <div class="ambienteItem col-md-4">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/plantados.svg" alt="">
+                      </div>
+                      <div class="ambienteItem__count">134,670</div>
+                      <div class="ambienteItem__title">Árboles plantados</div>
+                    </div>
+                    <div class="ambienteItem col-md-4">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/steering-wheel.svg" alt="">
+                      </div>
+                      <div class="ambienteItem__count">34,572</div>
+                      <div class="ambienteItem__title">Coches eliminados de las calles</div>
+                    </div>
+                    <div class="ambienteItem col-md-4">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/co2.svg" alt="">
+                      </div>
+                      <div class="ambienteItem__count">456,000</div>
+                      <div class="ambienteItem__title">Toneladas de CO2 retiradas</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-5 ambiente_block2">
+                  <div class="title-ambienteTab">
+                    Equivalentes en generación no renovable:
+                  </div>
+                  <div class="block-2 row">
+                    <div class="ambienteItem col-md-6">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/barrels.png" alt="">
+                      </div>
+                      <div class="ambienteItem__count">125,640</div>
+                      <div class="ambienteItem__title">Barriles de petróleo</div>
+                    </div>
+                    <div class="ambienteItem col-md-6">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/electric-tower.png" alt="">
+                      </div>
+                      <div class="ambienteItem__count">1,568</div>
+                      <div class="ambienteItem__title">Toneladas de carbón</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <div class="tool-icon d-flex justify-content-center align-items-center">
+            <img src="public/images/icons/folder-2.png" alt="">
+          </div>
+        </a>
+      </main>
+    </div>
+  </div>
+  <script src="public/vendor/js/jquery-2.1.0.min.js"></script>
+  <script src="public/vendor/js/jquery.mCustomScrollbar.min.js"></script>
+  <script src="/js/jquery.easy-autocomplete.min.js"></script>
+  <script src="/js/jquery-ui.min.js"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="dist/bundle.js"></script>
+  <script src="/js/test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.lit {
+  width: 100%;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  &__number {
+    font-size: 40px;
+    margin-right: 20px;
+  }
+  &__text {
+    font-size: 20px;
+  }
+}
+.highlight {
+  color: $primary-color;
+}

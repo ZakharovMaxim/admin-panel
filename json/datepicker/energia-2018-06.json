@@ -1,0 +1,274 @@
+{
+    "items": [
+        {
+            "title": null,
+            "date": "2018-06-01 00:00:00",
+            "value": 625.8,
+            "expected": 406.82,
+            "rate": 6.2517482517483,
+            "frequency": 625.8,
+            "x1": 6.2517482517483
+        },
+        {
+            "title": null,
+            "date": "2018-06-02 00:00:00",
+            "value": 571.08,
+            "expected": 406.82,
+            "rate": 5.7050949050949,
+            "frequency": 571.08,
+            "x1": 5.7050949050949
+        },
+        {
+            "title": null,
+            "date": "2018-06-03 00:00:00",
+            "value": 393.33,
+            "expected": 406.82,
+            "rate": 3.9293706293706,
+            "frequency": 393.33,
+            "x1": 3.9293706293706
+        },
+        {
+            "title": null,
+            "date": "2018-06-04 00:00:00",
+            "value": 622.47,
+            "expected": 406.82,
+            "rate": 6.2184815184815,
+            "frequency": 622.47,
+            "x1": 6.2184815184815
+        },
+        {
+            "title": null,
+            "date": "2018-06-05 00:00:00",
+            "value": 590.41,
+            "expected": 406.82,
+            "rate": 5.8982017982018,
+            "frequency": 590.41,
+            "x1": 5.8982017982018
+        },
+        {
+            "title": null,
+            "date": "2018-06-06 00:00:00",
+            "value": 578.52,
+            "expected": 406.82,
+            "rate": 5.7794205794206,
+            "frequency": 578.52,
+            "x1": 5.7794205794206
+        },
+        {
+            "title": null,
+            "date": "2018-06-07 00:00:00",
+            "value": 578.28,
+            "expected": 406.82,
+            "rate": 5.777022977023,
+            "frequency": 578.28,
+            "x1": 5.777022977023
+        },
+        {
+            "title": null,
+            "date": "2018-06-08 00:00:00",
+            "value": 479.17,
+            "expected": 406.82,
+            "rate": 4.7869130869131,
+            "frequency": 479.17,
+            "x1": 4.7869130869131
+        },
+        {
+            "title": null,
+            "date": "2018-06-09 00:00:00",
+            "value": 407.37,
+            "expected": 406.82,
+            "rate": 4.0696303696304,
+            "frequency": 407.37,
+            "x1": 4.0696303696304
+        },
+        {
+            "title": null,
+            "date": "2018-06-10 00:00:00",
+            "value": 552.65,
+            "expected": 406.82,
+            "rate": 5.520979020979,
+            "frequency": 552.65,
+            "x1": 5.520979020979
+        },
+        {
+            "title": null,
+            "date": "2018-06-11 00:00:00",
+            "value": 396.18,
+            "expected": 406.82,
+            "rate": 3.9578421578422,
+            "frequency": 396.18,
+            "x1": 3.9578421578422
+        },
+        {
+            "title": null,
+            "date": "2018-06-12 00:00:00",
+            "value": 222.18,
+            "expected": 406.82,
+            "rate": 2.2195804195804,
+            "frequency": 0,
+            "x1": 2.2195804195804
+        },
+        {
+            "title": null,
+            "date": "2018-06-13 00:00:00",
+            "value": 234.92,
+            "expected": 406.82,
+            "rate": 2.3468531468531,
+            "frequency": 0,
+            "x1": 2.3468531468531
+        },
+        {
+            "title": null,
+            "date": "2018-06-14 00:00:00",
+            "value": 212.01,
+            "expected": 406.82,
+            "rate": 2.117982017982,
+            "frequency": 0,
+            "x1": 2.117982017982
+        },
+        {
+            "title": null,
+            "date": "2018-06-15 00:00:00",
+            "value": 247.93,
+            "expected": 406.82,
+            "rate": 2.4768231768232,
+            "frequency": 0,
+            "x1": 2.4768231768232
+        },
+        {
+            "title": null,
+            "date": "2018-06-16 00:00:00",
+            "value": 52.29,
+            "expected": 406.82,
+            "rate": 0.52237762237762,
+            "frequency": 0,
+            "x1": 0.52237762237762
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-17 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-18 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-19 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-20 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-21 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-22 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-23 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-24 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-25 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-26 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-27 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-28 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-29 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2018-06-30 00:00:00",
+            "expected": 406.82,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        }
+    ]
+}

@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="dist/style.css" />
+    <link
+      rel="stylesheet"
+      href="public/vendor/css/jquery.mCustomScrollbar.min.css"
+    />
+    <link rel="stylesheet" href="/css/easy-autocomplete.min.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="loader">
+      <div class="loader">
+        <svg class="spinner" height="50" width="50" viewBox="0 0 50 50">
+          <circle
+            class="path"
+            cx="50%"
+            cy="50%"
+            r="20"
+            fill="none"
+            stroke-width="5"
+          ></circle>
+        </svg>
+      </div>
+    </div>
+    <div id="app" class="container-fluid collapsed-menu">
+      <div class="popup">
+        <div class="popup__content">
+          <form action="#" method="POST" id="startPresentacion">
+            <div class="title-configurar">
+              <span>Configurar presentacion</span>
+              <span class="icon-close"></span>
+            </div>
+            <div class="row justify-content-between">
+              <div class="col-5">
+                <div class="title-form"><span>Pantallas a desplegar</span></div>
+                <div class="form-group">
+                  <input type="checkbox" id="ch_general" name="general" />
+                  <div class="checkbox"></div>
+                  <label for="ch_general">General</label>
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" id="ch_generacion" name="generation" />
+                  <div class="checkbox"></div>
+                  <label for="ch_generacion">Generacion</label>
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" id="ch_ahorro" name="ahorro" />
+                  <div class="checkbox"></div>
+                  <label for="ch_ahorro">Ahorro</label>
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" id="ch_ambiente" name="ambiente" />
+                  <div class="checkbox"></div>
+                  <label for="ch_ambiente">Ambiente</label>
+                </div>
+                <div class="form-group">
+                  <input type="checkbox" id="ch_mapa" name="mapa" />
+                  <div class="checkbox"></div>
+                  <label for="ch_mapa">Mapa</label>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="title-form"><span>Tiempo de transition</span></div>
+                <div class="form-group">
+                  <input
+                    type="number"
+                    id="form_seconds"
+                    name="delay"
+                    value="5"
+                  />
+                  <label for="form_seconds">segundos</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <input type="submit" value="Iniciar" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="d-flex h-100 align-items-stretch main-row">
+        <div class="mobile-nav">
+          <div class="toggle-menu"><span class="icon-arrow-left"></span></div>
+        </div>
+        <nav class="col">
+          <div class="toggle-menu"><span class="icon-arrow-left"></span></div>
+          <div class="nav-content">
+            <div class="title-menu"><span>MONITOREO TOTAL</span></div>
+            <ul class="main-nav">
+              <li><a href="index.html" class="active">Dashboard</a></li>
+              <li><a href="map.html">Mapa</a></li>
+            </ul>
+            <div class="title-menu"><span>POR SISTEMA</span></div>
+            <div class="search">
+              <div class="search__content">
+                <form action="#">
+                  <input type="text" placeholder="Buscar sistema…" name="s" />
+                </form>
+              </div>
+            </div>
+            <div class="title-borderless">Recientes…</div>
+            <ul>
+              <li><a href="page.html">Corporativo Bimbo</a></li>
+              <li><a href="page.html">Apizaco</a></li>
+              <li><a href="page.html">CEDIS Querétaro</a></li>
+            </ul>
+          </div>
+        </nav>
+        <main class="col dashboard">
+          <div class="dashboard-header">
+            <div class="row justify-content-between align-items-center content">
+              <div class="col-auto d-flex">
+                <div class="logo">
+                  <img src="./public/images/Bimbo_logo.svg" alt="" />
+                </div>
+                <div class="title-header"><span>Dashboard</span></div>
+              </div>
+              <div class="col-auto d-flex">
+                <div><div class="btn presentacion"></div></div>
+                <div class="bell"><span class="icon-bell"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-wrapper content">
+            <div class="tab-header">
+              <ul>
+                <li><a href="#general">General</a></li>
+                <li><a href="#generation">Generación</a></li>
+                <li><a href="#ahorro">Ahorro</a></li>
+                <li><a href="#ambiente">Ambiente</a></li>
+                <li><a href="#sistemas">Sistemas</a></li>
+              </ul>
+            </div>
+            <div class="tabs">
+              <div class="tab" id="general">
+                <div class="row justify-content-between">
+                  <div class="col-md-9 hoy col-12">
+                    <div class="title"><span>Hoy</span></div>
+                    <div
+                      class="row justify-content-between align-items-stretch"
+                    >
+                      <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card">
+                          <div class="title-chart">
+                            <span>Generación de hoy vs. estimada</span>
+                          </div>
+                          <div
+                            class="chart"
+                            data-percent="20"
+                            data-color2="#00FFD2"
+                            data-color1="#00948E"
+                            id="chart-1"
+                          >
+                            <div class="chart-type chart-progress"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card">
+                          <div class="title-chart">
+                            <span>Ahorro de hoy vs. estimado</span>
+                          </div>
+                          <!--
+                            data-datasource-url="/json/general_ahorro.json"
+                          -->
+                          <div
+                            class="chart"
+                            data-percent="50"
+                            data-color2="#04A3D0"
+                            data-color1="#13334D"
+                            id="chart-2"
+                          >
+                            <div class="chart-type chart-progress"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card plantacion text-card">
+                          <div class="title-chart">
+                            <span>Árboles plantados</span>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <div class="plantacion__icon">
+                              <img
+                                src="public/images/icons/plantados.svg"
+                                alt=""
+                              />
+                            </div>
+                            <div class="plantacion__text">1,253</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="title"><span>En el tiempo:</span></div>
+                    <div
+                      class="row justify-content-between align-items-stretch"
+                    >
+                      <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card">
+                          <div class="title-chart">
+                            <span>Sistemas encendidos</span>
+                          </div>
+                          <!--
+                            data-datasource-url="/json/general_sistemas.json"
+                          -->
+                          <div
+                            class="chart"
+                            data-percent="30"
+                            data-value="24"
+                            data-color1="#FFE660"
+                            data-color2="#D1EB79"
+                            data-color3="#00FBBC"
+                            data-color4="#00FDC8"
+                            data-color5="#00E3C9"
+                            data-color6="#00C3C1"
+                            data-color7="#00ABBC"
+                            id="chart-3"
+                          >
+                            <div
+                              class="chart-type chart-progress chart-multicolor chart-notriangle"
+                            ></div>
+                          </div>
+                          <div class="title-chart">
+                            <span>Sistemas no encendidos</span>
+                          </div>
+                          <div class="lit d-flex align-items-center">
+                            <div class="lit__number en_construction">8</div>
+                            <div class="lit__text">en construcción</div>
+                          </div>
+                          <div class="lit d-flex align-items-center">
+                            <div class="lit__number apagados">0</div>
+                            <div class="lit__text">apagados</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-12">
+                        <div class="card">
+                          <div class="title-chart">
+                            <span>Desempeño de los sistemas</span>
+                          </div>
+                          <!--
+                            data-datasource-url="/json/general_desempeno.json"
+                          -->
+                          <div class="chart" data-data="7,5,2" id="chart-4">
+                            <div class="chart-type chart-pie"></div>
+                          </div>
+                          <div class="statistics">
+                            <div class="statistic row">
+                              <div
+                                class="statistic__rate statistic__rate-1"
+                              ></div>
+                              <div>
+                                <div class="statistic__title">
+                                  Generación arriba de 90%
+                                </div>
+                                <div class="statistic__count">7 sistemas</div>
+                              </div>
+                            </div>
+                            <div class="statistic row">
+                              <div
+                                class="statistic__rate statistic__rate-2"
+                              ></div>
+                              <div>
+                                <div class="statistic__title">
+                                  Generación entre 80%-90%
+                                </div>
+                                <div class="statistic__count">5 sistemas</div>
+                              </div>
+                            </div>
+                            <div class="statistic row">
+                              <div
+                                class="statistic__rate statistic__rate-3"
+                              ></div>
+                              <div>
+                                <div class="statistic__title">
+                                  Generación menor al 80%
+                                </div>
+                                <div class="statistic__count">2 sistemas</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-12">
+                        <div class="row flex-column h-100">
+                          <div class="card text-card">
+                            <div class="title-chart">
+                              <span>Generación total acumulada</span>
+                            </div>
+                            <div class="general__generation">
+                              <span class="count">24.36</span> <span> GWh</span>
+                            </div>
+                          </div>
+                          <div class="card text-card">
+                            <div class="title-chart">
+                              <span>Ahorro total acumulado</span>
+                            </div>
+                            <div class="general__ahorro">
+                              <span class="count">$456.5 </span>
+                              <span> mill.</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 d-flex block-notification col-12">
+                    <div class="title"><span>Notificaciones:</span></div>
+                    <div class="row no-gutters">
+                      <div class="col-md-12 col-sm-6 col-12">
+                        <div class="card">
+                          <div class="title-chart">
+                            <span>Buzón de recibos</span>
+                          </div>
+                          <div class="notification">
+                            <div class="notification__items">
+                              <a href="#">
+                                <img
+                                  src="public/images/notification.svg"
+                                  alt=""
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="public/images/notification.svg"
+                                  alt=""
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="public/images/notification.svg"
+                                  alt=""
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="public/images/notification.svg"
+                                  alt=""
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="public/images/notification.svg"
+                                  alt=""
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="public/images/notification.svg"
+                                  alt=""
+                                />
+                              </a>
+                            </div>
+                            <div class="notification__title">
+                              <span>
+                                <span class="name">Puebla 2</span> + otros
+                                2</span
+                              >
+                              <div class="counter counter-red">
+                                <span>3</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-sm-6 col-12">
+                        <div class="card card-auto text-card">
+                          <div class="title-chart">
+                            <span>Alertas de mantenimiento</span>
+                          </div>
+                          <div class="alert">
+                            <img src="public/images/icons/key.svg" alt="" />
+                            <div class="counter counter-orange">3</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="generation" class="tab">
+                <div class="row align-items-start">
+                  <div class="col-12 col-md-4">
+                    <div class="title">
+                      <span>Generación de hoy vs. estimada:</span>
+                    </div>
+                    <div class="card">
+                      <div
+                        class="chart"
+                        id="chart-5"
+                        data-percent="50"
+                        data-value="25000"
+                        data-total="50000"
+                        data-color2="#00FBD0"
+                        data-color1="#00C3C1"
+                      >
+                        <div class="chart-type chart-progress"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-12 bar-block">
+                    <div class="row flex-column justify-content-between">
+                      <div class="title">
+                        <span
+                          >Generación de abril 2018 vs. meses anteriores:</span
+                        >
+                      </div>
+                      <div class="card">
+                        <!--
+                          data-datasource-url="/json/generation_deabril.json"
+                        -->
+                        <div
+                          class="chart"
+                          id="chart-6"
+                          data-datasource-url="/json/generation_deabril.json"
+                        >
+                          <div
+                            class="chart-type chart-bar"
+                            data-color1="#00C3C1"
+                            data-color2="#00FBD0"
+                            data-show-y-axis="true"
+                            data-label="kWh"
+                            data-suffix="kWh"
+                            data-prefix=""
+                            data-value-suffix="kWh"
+                            data-value-prefix=""
+                          ></div>
+                          <div class="data">
+                            <div class="item">
+                              <div class="item__label">Dec</div>
+                              <div class="item__frequency">10000</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Oct</div>
+                              <div class="item__frequency">50000</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Nov</div>
+                              <div class="item__frequency">51514</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Jan</div>
+                              <div class="item__frequency">24124</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Feb</div>
+                              <div class="item__frequency">30512</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="title">
+                        <span>Generación total acumulada:</span>
+                      </div>
+                      <div class="card">
+                        <div class="generation__total">
+                          <span> <span class="value">24.36</span> GWh</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="ahorro" class="tab">
+                <div class="row align-items-start">
+                  <div class="col-md-4">
+                    <div class="title">
+                      <span>Generación de hoy vs. estimada:</span>
+                    </div>
+                    <div class="card">
+                      <div
+                        class="chart"
+                        data-percent="80"
+                        data-color2="#13334D"
+                        data-color1="#04A3D0"
+                        id="chart-7"
+                      >
+                        <div class="chart-type chart-progress"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 bar-block">
+                    <div class="row flex-column justify-content-between">
+                      <div class="title">
+                        <span
+                          >Generación de abril 2018 vs. meses anteriores:</span
+                        >
+                      </div>
+                      <div class="card">
+                        <div class="chart" id="chart-8">
+                          <div
+                            class="chart-type chart-bar"
+                            data-color1="#13334D"
+                            data-color2="#04A3D0"
+                            data-label="$"
+                            data-suffix="$"
+                            data-prefix=""
+                            data-value-suffix="$"
+                            data-value-prefix=""
+                          ></div>
+                          <div class="data">
+                            <div class="item">
+                              <div class="item__label">Dec</div>
+                              <div class="item__frequency">24145</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Oct</div>
+                              <div class="item__frequency">15122</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Nov</div>
+                              <div class="item__frequency">20125</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Jan</div>
+                              <div class="item__frequency">24424.51</div>
+                            </div>
+                            <div class="item">
+                              <div class="item__label">Feb</div>
+                              <div class="item__frequency">35550.64</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="title">
+                        <span>Generación total acumulada:</span>
+                      </div>
+                      <div class="card">
+                        <div class="ahorro__total">
+                          <span> <span class="value">24.36</span> GWh</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="ambiente" class="tab">
+                <div class="card">
+                  <div class="title-ambiente">
+                    <span>¡Bimbo contribuye a un mundo más limpio!</span>
+                  </div>
+                  <div class="ambiente-dark row justify-content-around">
+                    <div class="ambienteItem col-md-4">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/plantados.svg" alt="" />
+                      </div>
+                      <div class="ambienteItem__title">144 mill.</div>
+                      <div class="ambienteItem__description">
+                        Árboles plantados
+                      </div>
+                    </div>
+                    <div class="ambienteItem col-md-4">
+                      <div class="ambienteItem__image">
+                        <img
+                          src="public/images/icons/steering-wheel.svg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="ambienteItem__title">368 mil</div>
+                      <div class="ambienteItem__description">
+                        Coches eliminados de las calles
+                      </div>
+                    </div>
+                    <div class="ambienteItem col-md-4">
+                      <div class="ambienteItem__image">
+                        <img src="public/images/icons/co2.svg" alt="" />
+                      </div>
+                      <div class="ambienteItem__title">7.6 mill.</div>
+                      <div class="ambienteItem__description">
+                        Toneladas de CO2 retiradas
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="sistemas" class="tab">
+                <div class="table">
+                  <div class="table__content">
+                    <div class="thead">
+                      <div class="tr">
+                        <div class="header__name th">
+                          Proyecto <span class="sign"></span>
+                        </div>
+                        <div class="header__place th">
+                          Ciudad <span class="sign"></span>
+                        </div>
+                        <div class="header__energy th">
+                          Potencia <span class="sign"></span>
+                        </div>
+                        <div class="header__date th">
+                          Puesta en marcha <span class="sign"></span>
+                        </div>
+                        <div class="header__rate th">
+                          Desempeño <span class="sign"></span>
+                        </div>
+                        <div class="th">Accesos</div>
+                      </div>
+                    </div>
+                    <div class="tbody">
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">86 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="2">
+                          <div class="statistic__rate statistic__rate-2"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">186 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Bpizaco</div>
+                        <div class="row__place td">Ylaxcala</div>
+                        <div class="row__energy td">286 kWp</div>
+                        <div class="row__date td" data-date="2018-05-02">
+                          2 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Qpizaco</div>
+                        <div class="row__place td">Qlaxcala</div>
+                        <div class="row__energy td">56 kWp</div>
+                        <div class="row__date td" data-date="2018-05-05">
+                          5 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="3">
+                          <div class="statistic__rate statistic__rate-3"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">86 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="2">
+                          <div class="statistic__rate statistic__rate-2"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">186 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Bpizaco</div>
+                        <div class="row__place td">Ylaxcala</div>
+                        <div class="row__energy td">286 kWp</div>
+                        <div class="row__date td" data-date="2018-05-02">
+                          2 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Qpizaco</div>
+                        <div class="row__place td">Qlaxcala</div>
+                        <div class="row__energy td">56 kWp</div>
+                        <div class="row__date td" data-date="2018-05-05">
+                          5 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="3">
+                          <div class="statistic__rate statistic__rate-3"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">86 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="2">
+                          <div class="statistic__rate statistic__rate-2"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">186 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Bpizaco</div>
+                        <div class="row__place td">Ylaxcala</div>
+                        <div class="row__energy td">286 kWp</div>
+                        <div class="row__date td" data-date="2018-05-02">
+                          2 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Qpizaco</div>
+                        <div class="row__place td">Qlaxcala</div>
+                        <div class="row__energy td">56 kWp</div>
+                        <div class="row__date td" data-date="2018-05-05">
+                          5 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="3">
+                          <div class="statistic__rate statistic__rate-3"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">86 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="2">
+                          <div class="statistic__rate statistic__rate-2"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Apizaco</div>
+                        <div class="row__place td">Tlaxcala</div>
+                        <div class="row__energy td">186 kWp</div>
+                        <div class="row__date td" data-date="2018-05-03">
+                          3 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Bpizaco</div>
+                        <div class="row__place td">Ylaxcala</div>
+                        <div class="row__energy td">286 kWp</div>
+                        <div class="row__date td" data-date="2018-05-02">
+                          2 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="1">
+                          <div class="statistic__rate statistic__rate-1"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tr">
+                        <div class="row__name td">Qpizaco</div>
+                        <div class="row__place td">Qlaxcala</div>
+                        <div class="row__energy td">56 kWp</div>
+                        <div class="row__date td" data-date="2018-05-05">
+                          5 de mayo de 2018
+                        </div>
+                        <div class="row__rate td" data-rate="3">
+                          <div class="statistic__rate statistic__rate-3"></div>
+                        </div>
+                        <div class="td">
+                          <div class="d-flex justify-content-center">
+                            <a href="/pages/page">
+                              <img
+                                src="public/images/icons/analytics.svg"
+                                alt=""
+                              />
+                            </a>
+                            <a href="#">
+                              <img src="public/images/icons/gear.svg" alt="" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/pages/map">
+            <div
+              class="map-icon d-flex justify-content-center align-items-center"
+            >
+              <img src="public/images/icons/map.svg" alt="" />
+            </div>
+          </a>
+        </main>
+      </div>
+    </div>
+    <script src="public/vendor/js/jquery-2.1.0.min.js"></script>
+    <script src="public/vendor/js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="/js/jquery.easy-autocomplete.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>

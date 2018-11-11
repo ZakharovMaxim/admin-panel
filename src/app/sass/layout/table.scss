@@ -1,0 +1,88 @@
+.table {
+    margin-top: 40px;
+    background: $white;
+    color: $text-color;
+    font-size: 17px;
+    width: 100%;
+    overflow-x: scroll;
+    &__content {
+      height: 100%;
+      width: 100%;
+      min-width: 650px;
+    }
+  .tbody {
+    display: block;
+    height: 50vh;
+    overflow-y: hidden;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .thead {
+    .tr {
+      box-shadow: 0 2px 5px #000;
+    }
+  }
+  .tr {
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    .td, .th {
+      width: calc(100% / 6);
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+    .td, .th {
+      padding: 5px 0px 5px 10px;
+      text-align: center;
+    }
+    .th {
+      color: #00DEBD;
+      font-weight: 600;
+      font-size: 22px;
+      user-select: none;
+      -moz-user-select: none;
+      cursor: pointer;
+      .sign {
+        color: $text-color;
+        font-size: 20px;
+        &:after {
+          content: '—';
+        }
+      }
+    }
+    .td {
+      vertical-align: middle;
+      img {
+        width: 40px;
+      }
+      &.row__name {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+      }
+    }
+  }
+  &.order-by-date-asc .thead .header__date .sign::after, &.order-by-energy-asc .thead .header__energy .sign::after, &.order-by-name-asc .thead .header__name .sign::after, &.order-by-place-asc .thead .header__place .sign::after, &.order-by-rate-asc .thead .header__rate .sign::after {
+    content: '\6b';
+    font-family: icons;
+  }
+  &.order-by-date-desc .thead .header__date .sign::after, &.order-by-energy-desc .thead .header__energy .sign::after,&.order-by-name-desc .thead .header__name .sign::after, &.order-by-place-desc .thead .header__place .sign::after, &.order-by-rate-desc .thead .header__rate .sign::after {
+    content: '\6b';
+    font-family: icons;
+    display: inline-block;
+    transform: rotate(180deg);
+  }
+}
+.td:last-child {
+  div {
+  align-items:center;
+  }
+}
+.mCSB_container_wrapper {
+  margin-right: 0;
+}
+.mCSB_container_wrapper>.mCSB_container {
+  padding-right: 10px;
+}

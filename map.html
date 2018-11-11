@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="public/vendor/css/jquery.mCustomScrollbar.min.css">
+  <link rel="stylesheet" href="/css/easy-autocomplete.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app" class="container-fluid collapsed-menu" data-data="/plants.json">
+    <div class="row h-100 align-items-stretch">
+        <nav class="col">
+            <div class="toggle-menu">
+              <span class="icon-arrow-left"></span>
+            </div>
+            <div class="nav-content">
+              <div class="title-menu">
+                <span>MONITOREO TOTAL</span>
+              </div>
+              <ul class="main-nav">
+                <li>
+                  <a href="index.html" class="active">Dashboard</a>
+                </li>
+                <li>
+                  <a href="map.html">Mapa</a>
+                </li>
+              </ul>
+              <div class="title-menu">
+                <span>POR SISTEMA</span>
+              </div>
+              <div class="search">
+                <div class="search__content">
+                  <form action="#">
+                    <input type="text" placeholder="Buscar sistema…" name="s">
+                  </form>
+                </div>
+              </div>
+              <div class="title-borderless">Recientes…</div>
+              <ul>
+                <li>
+                  <a href="page.html">Corporativo Bimbo</a>
+                </li>
+                <li>
+                  <a href="page.html">Apizaco</a>
+                </li>
+                <li>
+                  <a href="page.html">CEDIS Querétaro</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+      <main class="col">
+          <div class="map-header">
+            <div class="content map-header__content">
+              <div class="col-auto">
+                <div class="title-header">
+                  <span>Mapa de sistema</span>
+                </div>
+              </div>
+              <div class="col-auto d-flex align-items-center">
+                <div>
+                  <div class="btn hide-menu">Pantala completa</div>
+                </div>
+                <div class="back">
+                  <a href="index.html">
+                    <span class="icon-arrow-down"></span>
+                  </a>
+                </div>
+                <div class="show-menu">
+                  <span class="icon-exit"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="map">
+            <div class="map__control">
+              <div class="search">
+                <div class="search__content">
+                  <input type="text" placeholder="Buscar sistema en el mapa... " name="title" class='autocomplete'>
+                </div>
+              </div>
+              <div class="state">
+                <div class="stateItem">
+                  <label for="proceso">
+                    <img src="public/images/icons/primary_geo.png" alt="">Activos</label>
+                  <input type="checkbox" id="proceso" checked="checked" name="proceso">
+                  <div class="checkbox"></div>
+                </div>
+                <div class="stateItem">
+                  <label for="activos">
+                    <img src="public/images/icons/white_geo.png" alt="">En proceso</label>
+                  <input type="checkbox" id="activos" checked="checked" name="activos">
+                  <div class="checkbox"></div>
+                </div>
+              </div>
+            </div>
+            <div class="map__content">
+            </div>
+          </div>
+      </main>
+    </div>
+  </div>
+  <script src="public/vendor/js/jquery-2.1.0.min.js"></script>
+  <script src="public/vendor/js/jquery.mCustomScrollbar.min.js"></script>
+  <script src="/js/jquery.easy-autocomplete.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBewp4aFZ8xMhBOfcgRmcceY9BHxoMWWrI&language=es&v=3.31"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="dist/bundle.js"></script>
+</body>
+
+</html>

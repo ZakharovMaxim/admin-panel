@@ -1,0 +1,112 @@
+{
+    "items": [
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-01-01 00:00:00",
+            "expected": 12436,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-02-01 00:00:00",
+            "expected": 13000,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-03-01 00:00:00",
+            "expected": 16088,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-04-01 00:00:00",
+            "expected": 14783,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-05-01 00:00:00",
+            "expected": 14304,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-06-01 00:00:00",
+            "expected": 12303,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-07-01 00:00:00",
+            "expected": 12586,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-08-01 00:00:00",
+            "expected": 12605,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-09-01 00:00:00",
+            "expected": 11463,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-10-01 00:00:00",
+            "expected": 12248,
+            "rate": 0,
+            "frequency": 0,
+            "x1": 50
+        },
+        {
+            "title": null,
+            "value": 0,
+            "date": "2017-11-01 00:00:00",
+            "expected": 11814,
+            "rate": 0,
+            "frequency": 5000,
+            "x1": 0
+        },
+        {
+            "title": null,
+            "date": "2017-12-01 00:00:00",
+            "value": 5928.58,
+            "expected": 11810,
+            "rate": 59.226573426573,
+            "frequency": 928.58,
+            "x1": 59.226573426573
+        }
+    ]
+}

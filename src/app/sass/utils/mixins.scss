@@ -1,0 +1,19 @@
+@mixin gradientLighter($color, $procent) {
+  background: linear-gradient(0deg, lighten($color, $procent), $color);
+}
+@mixin gradientDarken($color, $procent) {
+  background: linear-gradient(0deg, $color, darken($color, $procent));
+}
+@mixin colorGradientDarken($color, $procent) {
+  @include gradientDarken($color, $procent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $color;
+
+}
+@mixin colorGradientLighter($color, $procent) {
+  @include gradientLighter($color, $procent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $color;
+}

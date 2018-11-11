@@ -1,0 +1,143 @@
+.general__ahorro {
+  font-size: 3rem;
+  margin: 10px 0;
+  color: $white;
+  .count {
+    font-size: 4rem;
+  }
+}
+.general__generation {
+  text-align: center;
+  font-size: 3rem;
+  margin: 10px 0;
+  color: $primary-color;
+  .count {
+    font-size: 4rem;
+  }
+}
+.notification {
+  width: 70%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #000;
+  &__items {
+    position: relative;
+    a {
+      width: 100%;
+      display: block;
+      img {
+        width: 100%;
+        border-top: 1px solid $border-color;
+      }
+      &:nth-child(n+2) {
+        margin-top: -60%;
+      }
+    }
+  }
+  &__title {
+    background: linear-gradient(180deg, #00C3C1 0%, #00FBD0 100%);
+    position: relative;
+    text-align: center;
+    margin-top: -3px;
+    padding: 20px 0;
+    .name {
+      font-weight: bold;
+    }
+  }
+}
+.counter {
+  width: 30px;
+  height: 30px;
+  font-weight: 600;
+  font-size: 23px;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -15px;
+  border-radius: 50%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-red {
+    background: $red;
+    box-shadow: 0 0 5px $red;
+  }
+  &-orange {
+    background: $orange2;
+    box-shadow: 0 0 5px $orange2;
+  }
+}
+.alert {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 106px;
+  height: 106px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: $white;
+  img {
+    width: 50px;
+  }
+  .counter {
+    bottom: 0;
+    right: 0;
+    left: unset;
+  }
+}
+.map-icon {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background: $white;
+  box-shadow: 0 0 10px #000;
+  z-index: 20;
+  img {
+    width: 50px;
+  }
+}
+.generation__total {
+  font-size: 50px;
+  color: $primary-color;
+  text-shadow: 0 0 10px rgba($red, .3);
+  .value {
+    font-size: 120px;
+  }
+}
+.ahorro__total {
+  color: $white;
+  font-size: 50px;
+  text-shadow: 0 0 10px rgba($red, .3);
+  .value {
+    font-size: 120px;
+  }
+}
+
+.block-notification {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-left: 20px;
+  [class^=col]:first-child {
+    margin-bottom: 15px;
+  }
+  .card {
+    margin-left: 0;
+    
+  }
+}
+.bar-block {
+  padding-left: 20px;
+  .card {
+    margin-left: 0;
+    width: 100%;
+  }
+}

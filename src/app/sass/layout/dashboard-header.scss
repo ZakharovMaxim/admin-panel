@@ -1,0 +1,36 @@
+.dashboard-header {
+  background: $white;
+  padding: 20px 10px 20px 80px;
+  z-index: 1;
+  .bell {
+    width: 53px;
+    height: 53px;
+    margin-right: 41px;
+    margin-left: 62px;
+    margin-top: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    border-radius: 50%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-size: 3rem;
+      &:before {
+        @include colorGradientDarken($primary-color, 15%);
+      }
+    }
+  }
+  .logo {
+    margin-right: 34px;
+  }
+  .title-header {
+    padding-top: 13px;
+  }
+  .btn {
+    padding: 5px 20px;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,62 @@
+.ambiente-dark, .ambiente-light {
+  width: 100%;
+}
+.ambienteItem {
+  text-align: center;
+  &__image {
+    img {
+      width: 180px;
+    }
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  &__description {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.page {
+  .ambienteItem {
+    text-align: center;
+    &__image {
+      img {
+        width: 100px;
+      }
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: 300;
+      color: $ambienteColor;
+    }
+    &__count {
+      font-size: 22px;
+      color: $ambienteColor;
+      font-weight: 300;
+      margin: 20px 0;
+    }
+  }
+  .block-1 {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 70%;
+      top: 0;
+      right: 0;
+      background: $text-color;
+    }
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .ambienteItem {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

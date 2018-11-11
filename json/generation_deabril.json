@@ -1,0 +1,35 @@
+{
+    "label": "kWh",
+    "prefix": "mil",
+    "valuePrefix": "kWh",
+    "items": [
+        {
+            "month": "1",
+            "frequency": 55241
+        },
+        {
+            "month": "2",
+            "frequency": 35512
+        },
+        {
+            "month": "3",
+            "frequency": 55124
+        },
+        {
+            "month": "4",
+            "frequency": 15512
+        },
+        {
+            "month": "5",
+            "frequency": 25554
+        },
+        {
+            "month": "6",
+            "frequency": 35124
+        },
+        {
+            "month": "7",
+            "frequency": 45123
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+@import 'colors';
+@import 'fonts';
+@import 'reset';
+html, body {
+  font-family: 'Gibson';
+  font-size: 10px;
+  color: $white;
+  height: 100%;
+  font-weight: normal;
+  min-width: 570px;
+}
+#app {
+  height: 100%;
+}
+input {
+  color: $text-color;
+  font-family: 'Gibson';
+}
+.data {
+  display: none;
+}

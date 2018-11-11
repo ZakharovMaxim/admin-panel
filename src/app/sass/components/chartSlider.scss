@@ -1,0 +1,49 @@
+.chart-slider {
+  margin-top: 50px;
+  &__content {
+    position: relative;
+    width: 100%;
+    .title {
+      display: none;
+    }
+  }
+  &__header {
+    width: 100%;
+    color: $primary-color;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    .icon-arrow-right {
+      font-size: 23px;
+      cursor: pointer;
+    }
+    .icon-arrow-left {
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .chart-slider__title {
+      color: $text-color;
+      display: inline-block;
+      margin: 0 50px;
+      font-size: 15px;
+    }
+  }
+  &__slide {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &.active {
+      height: auto;
+      visibility: visible;
+    }
+  }
+}

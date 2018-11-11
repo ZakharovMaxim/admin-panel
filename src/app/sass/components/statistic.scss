@@ -1,0 +1,42 @@
+.statistics {
+  width: 100%;
+  margin-top: 15px;
+  .row{
+    flex-wrap:nowrap;
+  }
+}
+.statistic {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__title {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  &__count {
+    font-size: 13px;
+  }
+  &__rate {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.9);
+    margin-right: 5px;
+    display: inline-block;
+    &-1 {
+      background: linear-gradient(180deg, #00C3C1 0%, #00FBD0 100%);
+    }
+    &-2 {
+      background: linear-gradient(180deg, #FCD299 100%, #FCD299 100%);
+    }
+    &-3 {
+      @include gradientLighter($orange2, 10%);
+    }
+  }
+}

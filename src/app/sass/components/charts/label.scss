@@ -1,0 +1,68 @@
+.label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  &-y-top {
+    bottom: 100%;
+  }
+  &-y-center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &-y-bottom {
+    top: 100%;
+  }
+  &-y-border {
+    bottom: 10%;
+  }
+  &-x-center {
+    text-align: center;
+  }
+  &-x-right {
+    text-align: right;
+  }
+}
+
+.chart {
+  .labels {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+}
+
+.chart-label-long-yellow, .chart-label-square-yellow {
+  color: $text-color;
+  margin-bottom: 10px;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 4px;
+    background: yellow;
+  }
+}
+.chart-label-square-yellow {
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 14px;
+  }
+  &:before {
+    height: 15px;
+    margin-right: 10px;
+  }
+}
+.chart-label-primary-long {
+  color: $text-color;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 4px;
+    background: $primary-color;
+  }
+}

@@ -1,0 +1,119 @@
+nav.col {
+  background: $menu-bg;
+  max-width: 245px;
+  padding: 20px 0 20px 20px;
+  box-shadow: 0px 0px 15px #212020;
+  transition: all .1s;
+  z-index: 12;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  .easy-autocomplete {
+    width: 100%!important;
+  }
+  ul {
+    margin-left: -20px;
+    a {
+      text-decoration: none;
+      color: $white;
+      font-size: 2rem;
+      font-weight: 300;
+      width: 100%;
+      padding: 8px 5px 8px 18px;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      &:hover, &.active {
+        background: linear-gradient(180deg, #00C3C1 0%, #00FBD0 100%);
+      }
+      &:before {
+        font-family: 'icons';
+        content: '\66';
+        font-size: 2rem;
+        margin-right: 25px;
+      }
+    }
+    &.main-nav {
+      margin-bottom: 23px;
+      li:first-child {
+        a {
+          &:before {
+            content: '';
+            background: url('../assets/img/dashboard.svg');
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+          }
+        }
+      }
+      li:nth-child(2) a:before {
+        content: '';
+        background: url('../assets/img/sistema.svg') 100% 100% no-repeat;
+        background-size: cover;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+    }
+    &.recientes-nav {
+      li a:before {
+        content: '';
+        background: url('../assets/img/mapa.svg') 100% 100% no-repeat;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+      }
+    }
+  }
+  .title-menu {
+    padding: 0 32px 0 8px;
+  }
+  .title-borderless {
+    padding-left: 5px;
+    letter-spacing: 0.2px;
+    margin-bottom: 20px;
+  }
+  .search {
+    padding: 5px 30px 0 9px;
+    margin-bottom: 27px;
+  }
+  .nav-content {
+    opacity: 1;
+    transition: opacity .1s .1s;
+    width: 225px;
+  }
+  
+}
+.toggle-menu {
+  font-size: 2rem;
+  cursor: pointer;
+  padding-top: 10px;
+  margin-bottom: 45px;
+}
+#app.collapsed-menu nav {
+  max-width: 64px;
+  overflow: hidden;
+}
+
+#app.collapsed-menu .nav-content {
+  opacity: 0;
+}
+#app.hidden-menu nav {
+  max-width: 0;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+#app.hidden-menu .nav-content {
+  opacity: 0;
+}
+#app.collapsed-menu .toggle-menu span::before {
+  content: '\6c';
+}

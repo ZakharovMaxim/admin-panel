@@ -1,0 +1,94 @@
+.tab-wrapper {
+  padding: 50px 50px 25px 50px;
+  .tabs {
+    overflow: hidden;
+    max-width:100%;
+    .tab {
+      overflow: hidden;
+      padding-bottom: 10px;
+    }
+   }
+  .tab-header {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    ul {
+      border-bottom: 2px solid $white;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      padding: 7px 14px;
+      flex-wrap: wrap;
+      li {
+        position: relative;
+        text-align: center;
+        width: 120px;
+        a {
+          text-decoration: none;
+          color: $white;
+          font-size: 2rem;
+          transition: all .3s;
+          display: block;
+          &:hover, &.active {
+            color: $primary-color;
+            &:after {
+              position: absolute;
+              bottom: -9px;
+              left: 0;
+              height: 2px;
+              width: 100%;
+              background: $primary-color;
+              content: '';
+              display: block;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  .tab {
+    visibility: hidden;
+    height: 0;
+    &.active {
+      visibility: visible;
+      height: 100%;
+    }
+  }
+  &.tab-dark {
+    .tab-header {
+      ul {
+        border-bottom-color: $text-color;
+        justify-content: center;
+        li {
+          a {
+            color: $text-color;
+            &:after {
+              height: 3px;
+            }
+            &:hover , &.active {
+              color: $primary-color;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 868px) {
+  .tab-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    .tab-header {
+      padding: 0;
+    }
+  } 
+}
+@media screen and (max-width: 720px) {
+  .tab-wrapper .tab-header ul li {
+    width: auto;
+    padding: 0 10px;
+  }
+}
